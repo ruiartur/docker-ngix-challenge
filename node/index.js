@@ -10,10 +10,8 @@ const config = {
 const mysql = require('mysql')
 const connection = mysql.createConnection(config)
 
-const drop = "drop table people"
 const create = "create table people(id int not null auto_increment, name varchar(255), primary key(id))"
 const sql = `INSERT INTO people(name) values('Node'), ('Java'), ('Docker')`
-connection.query(drop)
 connection.query(create)
 connection.query(sql)
 
